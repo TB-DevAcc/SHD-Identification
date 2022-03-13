@@ -6,7 +6,7 @@
 <p>
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-<img align="left" src="https://img.shields.io/github/last-commit/TB-DevAcc/SHD_Identification" alt="Last-commit Badge">
+<img align="left" src="https://img.shields.io/github/last-commit/TB-DevAcc/SHD-Identification" alt="Last-commit Badge">
 
 ## Abstract
 
