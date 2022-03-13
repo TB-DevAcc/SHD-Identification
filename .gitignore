@@ -134,3 +134,7 @@ dmypy.json
 
 # Data
 data
+
+# No pickled files
+*.pkl
+*.joblib
