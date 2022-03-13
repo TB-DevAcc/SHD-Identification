@@ -2,6 +2,7 @@
 
 <p align="center">
     <img src="assets/confusion.png" witdh="50%">
+    <center>Random Forest Classifier: Classification results for 3 three Smart Home Devices</center>
 <p>
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
@@ -17,15 +18,21 @@ It provides a recommendation for the most suitable algorithm, the Random Forest,
 
 ## Usage
 
-To start the app call the model class and let it start the Dashboard. Note that the Dashboard is meant to be run in a Jupyter Notebook.
+The following quick-start example shows the usage of the software.
+These prerequisites have to be met:
 
-```python
-from app.model import Model
+- a python environment with the packets specified in environment.yml
+- a (with `joblib`) serialized ML model (e.g. `rf_classifier.joblib`) that was trained on the feature set containing specified in `training.ipynb`
+- a `.pcap` file containing the network packets to classify
 
-model = Model()
+<p align="center">
+    <img src="assets/bash_usage.png" witdh="100%">
+<p>
 
-model.run_app() # Shows the Dashboard that enables tweaking parameters, running the simulation and plotting the results
-```
+If the prerequisites are not met or the user wishes to use the identification tool with more fine grained control, they must first provide a suitable dataset. The notebook `training.ipynb` can then be used as a template for preparing the data, training and serializing the classifier. Within the notebook the provided packet capture files can be converted to `pandas.DataFrames` that are necessary to perform model training. Furthermore these DataFrames can be serialized into Python's `.pkl` files. This functionality is provided by `convert_pcap_to_df.py`.
+With the data available as serialized data frames, model training can be started by executing the classifier portion of the `training.ipynb` notebook. The resulting RF model is then saved into another serialized python object.
+
+After this, `identify_device.py` can be called to perform the classification and return the identified devices.
 
 ## Author
 
