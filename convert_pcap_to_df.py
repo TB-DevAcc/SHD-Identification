@@ -180,7 +180,7 @@ def create_df_from_pcap(pcap):
     return df
 
 
-def convert_pcap_to_df(pcap_path, pkl_path, name=None) -> None:
+def convert_pcap_to_df(pcap_path, pkl_path=None, name=None, verbose=True) -> None:
     if isinstance(pcap_path, Path):
         pcap_path = pcap_path.as_posix()
     pcap = rdpcap(pcap_path)
@@ -190,12 +190,15 @@ def convert_pcap_to_df(pcap_path, pkl_path, name=None) -> None:
     if name:
         df["label"] = name
 
-    df.to_pickle(path=pkl_path)
-    print(
-        f"Converted pcap file at {pcap_path} to pd.DataFrame and saved at {pkl_path}."
-        "\nResulting DataFrame:"
-    )
-    print(df.info())
+    if pkl_path:
+        df.to_pickle(path=pkl_path)
+        if verbose:
+            print(
+                f"Converted pcap file at {pcap_path} to pd.DataFrame and saved at {pkl_path}."
+                "\nResulting DataFrame:"
+            )
+    if verbose:
+        print(df.info())
 
     return df
 
