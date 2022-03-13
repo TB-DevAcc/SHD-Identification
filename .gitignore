@@ -138,3 +138,6 @@ data
 # No pickled files
 *.pkl
 *.joblib
+
+# formatter
+.prettierignore
