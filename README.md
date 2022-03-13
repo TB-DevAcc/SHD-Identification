@@ -1,7 +1,7 @@
 # Identification of Smart Home Devices
 
 <p align="center">
-    <img src="assets/confusion.png" witdh="50%">
+    <img src="assets/confusion_grey_bg.png" witdh="50%">
     <center>Random Forest Classifier: Classification results for 3 three Smart Home Devices</center>
 <p>
 
